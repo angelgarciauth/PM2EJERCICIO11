@@ -12,9 +12,14 @@ namespace PM2EJERCICIO11.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PageResultado : ContentPage
     {
-        public PageResultado()
+       
+
+        public  PageResultado(double resultado)
         {
             InitializeComponent();
+            lblResultado.Text = "El resultado es: " + resultado;
         }
+
+        
     }
 }

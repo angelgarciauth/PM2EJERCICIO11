@@ -1,9 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PM2EJERCICIO11.MainPage">
+             x:Class="PM2EJERCICIO11.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout>
+        <FlexLayout Direction="Row"
+                AlignItems="Center"
+                        Padding="20"
+                        BackgroundColor="Orange"
+                JustifyContent="SpaceEvenly">
+
+
+            <Label Text="OPERACIONES BASICAS" FontSize="16" Padding="10,5,30,10"/>
+        </FlexLayout>
+
         <Label Text="Numero 1"  Padding="30,10,30,10"/>
 
         <Entry Keyboard="Numeric"
@@ -16,13 +27,13 @@
                    x:Name="txtN2" 
                    BackgroundColor="White"/>
 
-        <Button Text="Suma" x:Name="btnSuma" Margin="10,0,10,0" Clicked="btnSuma_Clicked"/>
+        <Button Text="Suma" x:Name="btnSuma" BackgroundColor="#6991EF" Margin="10,0,10,0" Clicked="btnSuma_Clicked" />
 
-        <Button Text="Resta" x:Name="btnResta" Margin="10,0,10,0"  Clicked="btnResta_Clicked"/>
+        <Button Text="Resta" x:Name="btnResta" BackgroundColor="#6991EF" Margin="10,0,10,0"  Clicked="btnResta_Clicked"/>
 
-        <Button Text="Multiplicacion" x:Name="btnMulti" Margin="10,0,10,0" Clicked="btnMulti_Clicked"/>
+        <Button Text="Multiplicacion" x:Name="btnMulti" BackgroundColor="#6991EF" Margin="10,0,10,0" Clicked="btnMulti_Clicked"/>
 
-        <Button Text="Division" x:Name="btnDiv" Margin="10,0,10,0" Clicked="btnDiv_Clicked"/>
+        <Button Text="Division" x:Name="btnDiv" BackgroundColor="#6991EF" Margin="10,0,10,0" Clicked="btnDiv_Clicked"/>
 
 
     </StackLayout>

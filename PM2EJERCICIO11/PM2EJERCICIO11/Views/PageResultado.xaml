@@ -4,9 +4,7 @@
              x:Class="PM2EJERCICIO11.Views.PageResultado">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Resultado" x:Name="lblResultado" FontSize="16" HorizontalTextAlignment="Center" Padding="20" FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

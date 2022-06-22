@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using PM2EJERCICIO11.Views;
 
 namespace PM2EJERCICIO11
 {
@@ -23,78 +24,70 @@ namespace PM2EJERCICIO11
         
         public void datos()
         {
-            
             n1 = Convert.ToDouble(txtN1.Text);
             n2 = Convert.ToDouble(txtN2.Text);
         }
 
+
         private async void btnSuma_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtN1.Text) || string.IsNullOrWhiteSpace(txtN2.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar los 2 numeros", "OK");
+                return;
+            }
             datos();
-            resultado = suma(n1, n2);
+            resultado = n1 + n2;
+            await Navigation.PushAsync(new PageResultado(resultado));
 
-            await DisplayAlert("Aviso", resultado.ToString(), "OK");
         }
 
         private async void btnResta_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtN1.Text) || string.IsNullOrWhiteSpace(txtN2.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar los 2 numeros", "OK");
+                return;
+            }
             datos();
-            resultado = resta(n1, n2);
+            resultado = n1- n2;
+            await Navigation.PushAsync(new PageResultado(resultado));
 
-            await DisplayAlert("Aviso", resultado.ToString(), "OK");
         }
 
         private async void btnMulti_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtN1.Text) || string.IsNullOrWhiteSpace(txtN2.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar los 2 numeros", "OK");
+                return;
+            }
             datos();
-            resultado = multiplicacion(n1, n2);
-
-            await DisplayAlert("Aviso", resultado.ToString(), "OK");
+            resultado = n1 * n2;
+            await Navigation.PushAsync(new PageResultado(resultado));
         }
 
         private async void btnDiv_Clicked(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtN1.Text) || string.IsNullOrWhiteSpace(txtN2.Text))
+            {
+                await DisplayAlert("Error", "Debe ingresar los 2 numeros", "OK");
+                return;
+            }
+            if (Convert.ToDouble(txtN2.Text) == 0)
+            {
+                await DisplayAlert("Error", "No se puede dividir entre 0" +
+                    "", "OK");
+                return;
+            }
             datos();
-            resultado = division(n1, n2);
-
-            await DisplayAlert("Aviso", resultado.ToString(), "OK");
+            resultado = n1 / n2;
+            await Navigation.PushAsync(new PageResultado(resultado));
         }
 
+  
 
-
-
-
-        /*FUNCIONES*/
-        public static double suma(double n1, double n2)
-        {
-            double suma = 0;
-            suma = n1 + n2;
-            return suma;
-        }
-
-        public static double resta(double n1, double n2)
-        {
-            double resta = 0;
-            resta = n1 - n2;
-            return resta;
-        }
-
-        public static double multiplicacion(double n1, double n2)
-        {
-            double multi = 0;
-            multi = n1 * n2;
-            return multi;
-        }
-
-        public static double division(double n1, double n2)
-        {
-            double division = 0;
-            division = n1 / n2;
-            return division;
-        }
-
-
-    }
+}
 
 
 
